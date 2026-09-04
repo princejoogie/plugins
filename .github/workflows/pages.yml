@@ -18,7 +18,11 @@ jobs:
           bun-version: 1.4.0
       - run: bun install --frozen-lockfile
         working-directory: packages/web
-      - run: bun run build
+      - run: bun run check
+        working-directory: packages/web
+      - name: Check generated docs
+        run: git diff --exit-code
+      - run: bun audit
         working-directory: packages/web
       - uses: cloudflare/wrangler-action@9acf94ace14e7dc412b076f2c5c20b8ce93c79cd # v3
         with:

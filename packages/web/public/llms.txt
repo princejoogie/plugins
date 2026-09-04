@@ -1,0 +1,20 @@
+# Juguilon OpenCode plugins
+
+> OpenCode V2 plugins by Prince Carlo Juguilon. Install these plugins from the public `princejoogie/dotfiles` repository with `opencode2 plugin add`.
+
+This is an install catalog, not a package registry. Use the markdown pages below instead of scraping the JavaScript page. Each Git install target uses a package branch built from its plugin directory in `princejoogie/dotfiles`. Use the branch's full commit hash when you need an immutable install.
+
+## Plugins
+
+- [Pull request](https://plugins.juguilon.com/pull-request.md): Shows the current branch's GitHub pull request, reviews, and checks in the OpenCode sidebar. Requires GitHub CLI (`gh`) authenticated for the repository.
+- [Usage](https://plugins.juguilon.com/usage.md): Shows OpenAI Codex and xAI Grok usage in the OpenCode sidebar. Requires Codex CLI for OpenAI Codex usage. OpenCode xAI login or Grok CLI credentials for xAI usage.
+
+## Site
+
+- [Markdown catalog](https://plugins.juguilon.com/index.md): Install commands and OpenCode configuration for every plugin.
+- [HTML catalog](https://plugins.juguilon.com/): Human-readable catalog with screenshots and copy buttons.
+
+## Optional
+
+- [Plugin source](https://github.com/princejoogie/dotfiles/tree/main/agents/.config/opencode/plugins): Source directories in `princejoogie/dotfiles`.
+- [OpenCode plugins guide](https://opencode.ai/v2/docs/build/plugins): OpenCode V2 plugin loading and packaging.

@@ -1,0 +1,18 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "bun run scripts/generate-content.js",
+    "dev": "bun run generate && vite --host 127.0.0.1",
+    "build": "bun run generate && vite build",
+    "check": "bun test && bun run build",
+    "preview": "vite preview --host 127.0.0.1",
+    "deploy": "bun run build && wrangler pages deploy dist --project-name plugins --branch main"
+  },
+  "devDependencies": {
+    "vite": "8.2.2",
+    "wrangler": "4.128.0"
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="OpenCode plugins by Prince Carlo Juguilon. Install the pull request sidebar and usage sidebar."
+    />
+    <link rel="alternate" type="text/markdown" href="/index.md" />
+    <link rel="describedby" href="/llms.txt" />
+    <title>Juguilon OpenCode plugins</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Juguilon OpenCode plugins</h1>
+      <nav aria-label="Plugin directory">
+        <ul id="directory"></ul>
+      </nav>
+      <ul id="plugins" aria-label="OpenCode plugins"></ul>
+      <noscript>JavaScript is off. Use the <a href="/index.md">markdown catalog</a> instead.</noscript>
+    </main>
+    <template id="plugin-template">
+      <li>
+        <article>
+          <h2><a></a></h2>
+          <p class="description"></p>
+          <img class="plugin-demo" width="800" alt="" />
+          <div class="config">
+            <p class="config-label">Merge into <code>opencode.json</code></p>
+            <pre tabindex="0"><code></code></pre>
+            <div class="prompt-actions">
+              <button class="copy-config" data-copy="config" type="button">Copy config</button>
+              <button class="copy-prompt" data-copy="prompt" type="button">Copy prompt</button>
+              <span class="status" role="status" aria-live="polite"></span>
+            </div>
+            <textarea class="copy-fallback" aria-label="Text to copy manually" readonly hidden></textarea>
+          </div>
+        </article>
+      </li>
+    </template>
+  </body>
+</html>

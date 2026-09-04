@@ -1,0 +1,294 @@
+:root {
+  color-scheme: light;
+  --background: oklch(100% 0 0);
+  --foreground: oklch(14.1% 0 0);
+  --muted-foreground: oklch(48% 0 0);
+  --surface: oklch(96.7% 0 0);
+  --border: oklch(92% 0 0);
+  --ring: oklch(50.8% 0.118 165.612);
+  --brand: oklch(50.8% 0.118 165.612);
+  --button: #dcdcdc;
+  --button-text: oklch(21% 0 0);
+  --prompt: #16803d;
+  --prompt-hover: #126c33;
+  --code-bg: #272822;
+  --code-fg: #f8f8f2;
+  --code-key: #a6e22e;
+  --code-string: #e6db74;
+  --container: 48rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.0625rem;
+  --text-2xl: 1.375rem;
+  --font-sans: "Helvetica Neue", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Menlo", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: calc(100% - 96px);
+  max-width: var(--container);
+  margin: 56px auto;
+  text-align: start;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-2xl);
+  letter-spacing: -0.025em;
+  margin-block-end: 36px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#plugins > li {
+  border-block-start: 1px solid var(--border);
+  padding-block: 28px;
+}
+
+#directory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin-block-end: 36px;
+}
+
+#directory a {
+  min-height: 44px;
+  color: var(--brand);
+  font-size: var(--text-base);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--brand) 35%, transparent);
+  align-items: center;
+  display: inline-flex;
+}
+
+#directory a:hover {
+  text-decoration-color: currentColor;
+}
+
+article {
+  scroll-margin-block-start: 32px;
+}
+
+h2 {
+  font-size: var(--text-lg);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+  text-decoration: none;
+  text-decoration-thickness: from-font;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h2 a {
+  color: var(--brand);
+}
+
+.description {
+  color: var(--muted-foreground);
+  font-size: var(--text-base);
+  text-wrap: pretty;
+  margin-block-start: 8px;
+  line-height: 1.55;
+}
+
+.plugin-demo {
+  outline-offset: -1px;
+  border-radius: 8px;
+  outline: 1px solid oklch(0% 0 0 / 0.1);
+  width: 100%;
+  height: auto;
+  margin-block-start: 24px;
+  display: block;
+}
+
+.config {
+  margin-block-start: 24px;
+}
+
+.config-label {
+  color: var(--muted-foreground);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+pre {
+  color: var(--code-fg);
+  color-scheme: dark;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--code-bg);
+  border-radius: 8px;
+  margin: 12px 0 0;
+  padding: 20px;
+  line-height: 1.65;
+}
+
+pre code {
+  font-size: inherit;
+}
+
+.syntax-key {
+  color: var(--code-key);
+}
+
+.syntax-string {
+  color: var(--code-string);
+}
+
+.syntax-punctuation {
+  color: var(--code-fg);
+}
+
+.copy-fallback:not([hidden]) {
+  width: 100%;
+  min-height: 140px;
+  font: 400 16px / 1.5 var(--font-sans);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-block-start: 16px;
+  padding: 12px;
+  display: block;
+}
+
+.prompt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-block-start: 16px;
+}
+
+button {
+  min-width: 116px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+  font: 500 var(--text-sm) / 1 var(--font-sans);
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    transform 0.15s;
+}
+
+.copy-config {
+  background: var(--button);
+  color: var(--button-text);
+}
+
+.copy-config:hover {
+  background: color-mix(in oklab, var(--button) 90%, transparent);
+}
+
+.copy-prompt {
+  background: var(--prompt);
+  color: #fff;
+}
+
+.copy-prompt:hover {
+  background: var(--prompt-hover);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+.status {
+  color: var(--muted-foreground);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
+::selection {
+  color: #163f2c;
+  background: #d5eadc;
+}
+
+pre ::selection {
+  color: var(--code-fg);
+  background: #49483e;
+}
+
+@media (width <= 600px) {
+  main {
+    width: calc(100% - 40px);
+    margin: 32px auto;
+  }
+
+  h1 {
+    margin-block-end: 28px;
+  }
+
+  #plugins > li {
+    padding-block: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button {
+    transition: none;
+  }
+
+  button:active {
+    transform: none;
+  }
+}
